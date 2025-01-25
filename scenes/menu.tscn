@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6lldqpls6tmj"]
+
+[ext_resource type="Texture2D" uid="uid://bmkxs2cp8vb0j" path="res://assets/button.png" id="1_iabn3"]
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_m0xx8"]
+[ext_resource type="Texture2D" uid="uid://dxkbu4macyp33" path="res://assets/button_hover.png" id="2_ju2qv"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 351.0
+offset_top = 223.0
+offset_right = 351.0
+offset_bottom = 223.0
+script = ExtResource("1_m0xx8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Start Game" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_iabn3")
+texture_hover = ExtResource("2_ju2qv")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Start Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -17.5
+offset_right = 195.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.483015, 0.31854, 0.638561, 1)
+theme_override_font_sizes/font_size = 25
+text = "START GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_iabn3")
+texture_hover = ExtResource("2_ju2qv")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -17.5
+offset_right = 195.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.483015, 0.31854, 0.638561, 1)
+theme_override_font_sizes/font_size = 25
+text = "QUIT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
